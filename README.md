@@ -4,11 +4,11 @@
 ![ER図](ER.drawio.png)
 ## 環境構築
 
-*Dockerのビルド*
+**Dockerのビルド**
 1.リポジトリからダウンロード
 git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai_2.git
 
-２.DockerDesktopアプリを立ち上げる
+２.DockerDesktopアプリを立ち上げる<br>
 docker-compose up -d --build
 
 「MacのM1・M2チップのPCの場合、no matching manifest for linux/arm64/v8 in the manifest list
@@ -16,8 +16,9 @@ entties のメッセージか表示されビルドができないことがあり
 「mysql」内に「platform」の項目を追加で記載してください。」
 
 
-*Laravelの環境構築*
-１.Laravelをインストール
+**Laravelの環境構築**
+
+１.Laravelをインストール<br>
 docker-compose exec php bash
 
 composer install
