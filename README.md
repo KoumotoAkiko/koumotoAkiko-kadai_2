@@ -9,7 +9,7 @@
 git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai_2.git
 
 ２.DockerDesktopアプリを立ち上げる
-docker-composer up -d --build
+docker-compose up -d --build
 
 「MacのM1・M2チップのPCの場合、no matching manifest for linux/arm64/v8 in the manifest list
 entties のメッセージか表示されビルドができないことがあります。エラーが発生する場合は、docker-compose.ymlファイルの
@@ -18,33 +18,46 @@ entties のメッセージか表示されビルドができないことがあり
 
 *Laravelの環境構築*
 １.Laravelをインストール
-docker-composer exec php bash
+docker-compose exec php bash
+
 composer install
 
 
 2.envファイルの作成
 cp .env .example .env
-exit
 
-4..envファイルに以下のDBの設定を変更
 
-DB_HOST=mysql
-DB_DATABASE=laravel_db
-DB_USERNAME=laravel_user
+3..envファイルに以下のDBの設定を変更
+
+DB_HOST=mysql<br>
+DB_DATABASE=laravel_db<br>
+DB_USERNAME=laravel_user<br>
 DB_PASSWORD=laravel_pass
 
-５.アプリケーションキーの作成
+4.アプリケーションキーの作成
 php artisan key:generate
 
-6.マイグレーションの実行
+5.マイグレーションの実行
 php artisan migrate
 
-7.シーディングの実行
+6.シーディングの実行
 php artisan db:seed
 
+7.シンボリックリンクの作成
+php artisan storage:link
+、、、
 "The stream or file could not be opened"エラーが発生した場合
 ディレクトリ/ファイルの権限を変更
+
 $ sudo chmod -R 777 src/storage
+、、、
+
+URLの説明は以下に修正お願いします
+、、、
+
+商品一覧：http://localhost/products 
+商品登録：http//localhost/products/register
+、、、
 
 ## 使用技術
 ・Lalavel 8.83.8
