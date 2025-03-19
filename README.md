@@ -4,7 +4,7 @@
 ![ER図](ER.drawio.png)
 ## 環境構築
 
-**Dockerのビルド**
+**Dockerのビルド** <br>
 1.リポジトリからダウンロード
 git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai_2.git
 
