@@ -44,8 +44,6 @@
                     商品画像<span class="register-form__required">必須</span>
                 </label>
                     <input class="register-form__uplode" type="file" name="image" id="image">
-                    <img src="{{asset('storage/image/'. $product->image)}}" alt="Product Image">
-                    <input type="hidden" name="image" value="{{$product->image}}">
                     <p class="register-form__error-message">
                         @error('image')
                         {{$message}}

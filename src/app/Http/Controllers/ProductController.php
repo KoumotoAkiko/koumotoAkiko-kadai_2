@@ -99,9 +99,8 @@ class ProductController extends Controller
     public function create()
     {
         $seasons=Season::all();
-        $product=Product::latest()->first() ?? new Product();
 
-        return view('register',compact('seasons','product'));
+        return view('register',compact('seasons'));
     }
 
 
@@ -113,14 +112,14 @@ class ProductController extends Controller
             $image=$request->file('image');
             $imageName=$image->getClientOriginalName();/*元のファイル名を取得*/
             $image->storeAs('public/image', $imageName);/*public/image フォルダに保存*/
-            $product->image=$imageName;/*データベースのimageカラムに保存*/
+
 
         }
 
         $product=Product::create([
             'name'=>$request->name,
             'price'=>$request->price,
-            'image'=>$image,
+            'image'=>$imageName,
             'description'=>$request->description,
 
         ]);

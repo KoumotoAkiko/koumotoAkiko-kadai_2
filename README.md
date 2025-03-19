@@ -52,18 +52,12 @@ php artisan storage:link<br>
 $ sudo chmod -R 777 src/storage
 
 
-URLの説明は以下に修正お願いします
-
-
-商品一覧：http://localhost/products <br>
-商品登録：http//localhost/products/register
-、、、
-
 ## 使用技術
 ・Lalavel 8.83.8
 ・PHP 7.4.9
 ・Mysql 15.1
 
 ## URL
-・環境開発：http://localhost/ <br>
-・phpMyAdmin:http://localhost:8080/
+
+商品一覧：http://localhost/products <br>
+商品登録：http//localhost/products/register
