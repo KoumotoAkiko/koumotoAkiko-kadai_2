@@ -1,36 +1,46 @@
 ## アプリケーション名
-確認テスト：お問い合わせフォーム
+確認テスト：もぎたて
 ## ER図
 ![ER図](ER.drawio.png)
 ## 環境構築
-1.リポジトリからダウンロード
-$git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai.git
 
-2.srcディレクトリにある「.env.example」をコピーして 「.env」を作成し DBの設定を変更
-$ cp .env.example .env
+*Dockerのビルド*
+1.リポジトリからダウンロード
+git clone git@github.com:KoumotoAkiko/koumotoAkiko-kadai_2.git
+
+２.DockerDesktopアプリを立ち上げる
+docker-composer up -d --build
+
+「MacのM1・M2チップのPCの場合、no matching manifest for linux/arm64/v8 in the manifest list
+entties のメッセージか表示されビルドができないことがあります。エラーが発生する場合は、docker-compose.ymlファイルの
+「mysql」内に「platform」の項目を追加で記載してください。」
+
+
+*Laravelの環境構築*
+１.Laravelをインストール
+docker-composer exec php bash
+composer install
+
+
+2.envファイルの作成
+cp .env .example .env
+exit
+
+4..envファイルに以下のDBの設定を変更
 
 DB_HOST=mysql
 DB_DATABASE=laravel_db
 DB_USERNAME=laravel_user
 DB_PASSWORD=laravel_pass
 
-3.dockerコンテナを構築
-$ docker-compose up -d --build
+５.アプリケーションキーの作成
+php artisan key:generate
 
-*MySQLは、OSによって起動しない場合があるのでそれぞれのPCに合わせてdocker-compose.ymlファイルを編集してください。
+6.マイグレーションの実行
+php artisan migrate
 
-4.Laravelをインストール
-$ docker-compose exec php bash
-> composer install
-
-5.アプリケーションキーを作成
-> php artisan key:generate
-
-6.DBのテーブルを作成
-> php artisan migrate
-
-7.DBのテーブルにダミーデータを投入
-> php artisan db:seed
+7.シーディングの実行
+php artisan db:seed
 
 "The stream or file could not be opened"エラーが発生した場合
 ディレクトリ/ファイルの権限を変更
@@ -40,7 +50,6 @@ $ sudo chmod -R 777 src/storage
 ・Lalavel 8.83.8
 ・PHP 7.4.9
 ・Mysql 15.1
-・Composer 2.8.4
 
 ## URL
 ・環境開発：http://localhost/

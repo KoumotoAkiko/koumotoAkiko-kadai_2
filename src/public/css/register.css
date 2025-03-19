@@ -1,0 +1,59 @@
+
+
+.register-form__inner{
+    margin: 32px auto 0;
+    width: 74%;
+    font-size: 16px;
+}
+.register-form__group{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.register-form__required{
+    background-color: #f03e3e;
+    color: #FFFF;
+}
+.register-form__multiple-choice{
+    color: #f03e3e;
+}
+
+.register-form__error-message{
+    color: #f03e3e;
+}
+
+.register-form__label{
+    margin-right: 10px;
+}
+
+.register-form__required{
+    margin-left: 5px;
+}
+
+.register-form__seasons{
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.register-form__button{
+    margin: 0px auto;
+}
+
+.register-form__btn{
+    text-decoration: none;
+    padding: 8px 12px;
+    background: #FFA929;
+    color: black;
+    border-radius: 4px;
+}
+
+.register-form__back-btn{
+    text-decoration: none;
+    padding: 8px 12px;
+    background: #a9a9a9;
+    color: black;
+    border-radius: 4px;
+    
+}

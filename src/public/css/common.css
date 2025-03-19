@@ -1,0 +1,18 @@
+.header{
+position: relative;
+left: 0;
+padding:10px 20px ;
+
+}
+
+.header__heading{
+    font-size: 14px;
+    color: yellow;
+    font-family: serif;
+
+}
+
+.content{
+    background-color: #f0f0f0;
+}
+
