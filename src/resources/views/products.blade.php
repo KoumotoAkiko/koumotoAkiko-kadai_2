@@ -7,7 +7,7 @@
 @section('content')
 <div class="product">
     <div class="product__header">
-    <h2 class="product-title">商品一覧</h2>
+    <h1>商品一覧</h1>
     <nav class="product__nav">
         <a href="{{route('products.register')}}" class="product__btn" >+商品を追加</a>
     </nav>
@@ -43,8 +43,10 @@
                 <a href="{{route('products.edit', $product->id)}}">
                 <img src="{{asset('storage/image/'. $product->image)}}" alt="{{$product->name}}" class="image">
                 </a>
-                <h5>{{$product->name}}</h5>
-                <p>¥{{number_format($product->price)}}</p>
+            <div class="list-content">
+                <h5 class="product-name">{{$product->name}}</h5>
+                <p class="product-price">¥{{number_format($product->price)}}</p>
+            </div>
             @endforeach
             </div>
             @else
@@ -54,6 +56,10 @@
                 {{$products->links()}}
             </div>
         </div>
+        <form class="product__content-logout" action="{{route('logout')}}" method="post">
+            @csrf
+            <button type="submit">ログアウト</button>
+        </form>
     </div>
     </div>
 </div>

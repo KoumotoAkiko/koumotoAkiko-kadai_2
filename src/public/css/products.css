@@ -1,13 +1,10 @@
-.product{
-    display: block;
-    width: 100%;
-}
+
 
 .header{
     width:1240px;
 }
 
-.h2{
+.h1{
     width: 1521px;
     height: 50px;
     margin: 20px;
@@ -31,28 +28,31 @@
 }
 
 
-
-.product__content{
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-
-}
-
 .pruduct__content-search{
     width: 20px;
 }
 
-.product__content-list{
+.product__content{
     display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    width: 100%;
-    max-width: 800px;
 }
 
+
+.product__list-com{
+    display: flex;
+    flex-wrap:wrap;
+    width: 900px;
+    
+}
+
+.list-content{
+    display: flex;
+    background-color: white;
+    height: 45px;
+    }
+
+
 .image{
-    width: 100%;
+    width: 300px;
     height: auto;
     display: block;
 }

@@ -23,6 +23,7 @@ class ProductRequest extends FormRequest
      */
     public function rules()
     {
+    
         return [
             'name'=>'required',
             'price'=>'required|integer|min:0|max:10000',
@@ -32,8 +33,9 @@ class ProductRequest extends FormRequest
         ];
     }
 
-    public function message()
+    public function messages()
     {
+        
         return[
             'name.required'=>'商品名を入力してください',
             'price.required'=>'値段を入力してください',

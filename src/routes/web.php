@@ -21,4 +21,6 @@ Route::delete('/products/{id}/delete',[ProductController::class, 'destroy'])->na
 Route::get('/products/register',[ProductController::class,'create'])->name('products.register');
 Route::post('/products/register',[ProductController::class, 'store'])->name('products.store');
 
-
+Route::middleware('auth')->group(function(){
+Route::get('/admin/profile',[ProductController::class, 'profile'])->name('admin.profile');
+});
