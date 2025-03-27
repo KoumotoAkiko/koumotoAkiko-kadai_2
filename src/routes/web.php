@@ -23,4 +23,5 @@ Route::post('/products/register',[ProductController::class, 'store'])->name('pro
 
 Route::middleware('auth')->group(function(){
 Route::get('/admin/profile',[ProductController::class, 'profile'])->name('admin.profile');
+Route::post('/profile/store',[ProductController::class, 'store'])->name('profile.store');
 });

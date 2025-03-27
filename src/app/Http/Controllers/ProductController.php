@@ -104,6 +104,12 @@ class ProductController extends Controller
     }
 
 
+    public function profile()
+    {
+        return view('profile');
+    }
+
+
     public function store(ProductRequest $request)
     {
 
@@ -133,21 +139,15 @@ class ProductController extends Controller
             return redirect('products')->withInput();
         }
 
-        Profile::create([
-            'user_id'=>Auth::id(),
-            'gender'=>$request->gender,
-            'birthday'=>$request->birthday,
-        ]);
-
+        Profile::create($request->only([
+            'user_id',
+            'gender',
+            'birthday'
+        ]));
 
         return redirect()->route('products');
 
 }
-
-    public function profile()
-    {
-        return view('profile');
-    }
 
 
 }
